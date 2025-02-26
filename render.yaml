@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: laravel-app
+    env: docker
+    repo: https://github.com/YOUR-USERNAME/YOUR-REPO
+    branch: main
+    buildCommand: docker build -t laravel-app .
+    startCommand: docker run -p 80:80 laravel-app
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        sync: false
